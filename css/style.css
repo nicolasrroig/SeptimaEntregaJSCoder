@@ -1,0 +1,322 @@
+/* ESTILOS GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fondo: #101010;
+    --panel: #1a1a1a;
+    --tarjeta: #202020;
+    --dorado: #d5ae65;
+    --texto: #f5f5f5;
+    --texto-secundario: #a5a5a5;
+    --borde: #333333;
+    --rojo: #e36b6b;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+
+/* ENCABEZADO */
+
+.encabezado {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--borde);
+}
+
+.marca {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.marca span,
+.presentacion h1 span {
+    color: var(--dorado);
+}
+
+.subtitulo {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+
+/* PRESENTACIÓN */
+
+.presentacion {
+    padding: 55px 0 35px;
+}
+
+.etiqueta {
+    color: var(--dorado);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.presentacion h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.presentacion > p:last-child {
+    color: var(--texto-secundario);
+}
+
+
+/* PANELES Y FORMULARIO */
+
+.panel {
+    background-color: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.panel h2,
+.catalogo h2 {
+    margin-bottom: 20px;
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label,
+.buscador label {
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    background-color: #111111;
+    color: var(--texto);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font: inherit;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--dorado);
+    outline-offset: 1px;
+}
+
+input::placeholder {
+    color: #777777;
+}
+
+
+/* BOTONES */
+
+.boton {
+    border: none;
+    border-radius: 6px;
+    padding: 11px 16px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.boton-principal {
+    background-color: var(--dorado);
+    color: #151515;
+    margin-top: 22px;
+}
+
+.boton-eliminar {
+    background-color: transparent;
+    color: var(--rojo);
+    border: 1px solid #773c3c;
+}
+
+.boton-eliminar:hover {
+    background-color: #382020;
+}
+
+
+/* MENSAJES */
+
+.mensaje {
+    min-height: 24px;
+    margin-top: 14px;
+    font-size: 0.9rem;
+}
+
+.mensaje.exito {
+    color: #8bd9a4;
+}
+
+.mensaje.error {
+    color: var(--rojo);
+}
+
+
+/* CATÁLOGO */
+
+.catalogo {
+    padding: 50px 0;
+}
+
+.catalogo-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.catalogo-encabezado h2 {
+    margin-bottom: 0;
+}
+
+.contador {
+    color: var(--dorado);
+    font-size: 0.9rem;
+}
+
+.buscador {
+    margin-bottom: 25px;
+}
+
+.buscador input {
+    margin-top: 8px;
+}
+
+
+/* TARJETAS GENERADAS POR JAVASCRIPT */
+
+.lista-productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tarjeta {
+    background-color: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 22px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.tarjeta:hover {
+    border-color: var(--dorado);
+    transform: translateY(-3px);
+}
+
+.categoria-producto {
+    color: var(--dorado);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tarjeta h3 {
+    margin: 10px 0;
+    font-size: 1.15rem;
+}
+
+.precio {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.stock {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.stock-agotado {
+    color: var(--rojo);
+}
+
+.tarjeta .boton {
+    width: 100%;
+}
+
+
+/* ESTADO VACÍO */
+
+.estado-vacio {
+    grid-column: 1 / -1;
+    padding: 35px 20px;
+    text-align: center;
+    color: var(--texto-secundario);
+    border: 1px dashed var(--borde);
+    border-radius: 10px;
+}
+
+
+/* PIE DE PÁGINA */
+
+.pie {
+    padding: 25px 5%;
+    text-align: center;
+    color: var(--texto-secundario);
+    border-top: 1px solid var(--borde);
+    font-size: 0.85rem;
+}
+
+
+/* ADAPTACIÓN A CELULARES Y TABLETS */
+
+@media (max-width: 800px) {
+    .lista-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .campos,
+    .lista-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .catalogo-encabezado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .presentacion {
+        padding-top: 35px;
+    }
+}
